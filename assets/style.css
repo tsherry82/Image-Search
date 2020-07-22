@@ -1,22 +1,26 @@
 body {
-background-color: slategray;
+    background-color: slategray;
 }
 
 .form {
     text-align: center;
     padding-bottom: 10px;
+    /* position: fixed;
+    top: 0;
+    right: 0;
+    left: 0; */
 }
 
-h1 {
-    text-align: center;
-}
-
-.container {
-
+.container {    
+    display: inline-block;
+    width: 80%;
+    height: 500px;
+    overflow-y: scroll;
+    padding-left: 13%;
 }
 
 .img {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
     padding:10px 5px;
 }

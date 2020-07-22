@@ -4,7 +4,7 @@ searchImage = () => {
     let imageSearch = $('#image-search').val();
     console.log('app.js[clickEvent] searching ' + imageSearch)
     const queryURL = 'https://api.unsplash.com/search/photos?client_id=GnW9UHgOsCytI0V8CrIujkfLzyyZtoCGLQ6vkREqvsw&per_page=25&query=' + imageSearch;
-    
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -13,7 +13,7 @@ searchImage = () => {
         results.forEach(image => {
             const img = $('<img>');
             img.attr('src', image.urls.small);
-            img.addClass('img')
+            img.addClass('img');
             $('.container').append(img)
         });
     });
@@ -22,4 +22,9 @@ searchImage = () => {
     imageSearch = '';
 }
 
-$('#search-image').on('click', searchImage) 
+$('#search-image').on('click', searchImage)
+$(document).on('keypress', function (e) {
+    if (e.which == 13) {
+        searchImage()
+    }
+});
